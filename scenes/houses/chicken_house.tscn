@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhhqps06c48xr"]
+
+[ext_resource type="Texture2D" uid="uid://4rp16sxwri0j" path="res://assets/objects/chicken_house.png" id="1_afdke"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ketm5"]
+size = Vector2(38, 24)
+
+[node name="ChickenHouse" type="Sprite2D"]
+texture = ExtResource("1_afdke")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_ketm5")

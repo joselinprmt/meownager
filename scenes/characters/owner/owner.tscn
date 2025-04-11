@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://cu2t3u0padesy"]
+
+[ext_resource type="Script" path="res://scenes/characters/owner/owner.gd" id="1_j53br"]
+[ext_resource type="Shader" path="res://scenes/characters/owner/replace_color.gdshader" id="1_n3vja"]
+[ext_resource type="Texture2D" uid="uid://dgphfauu4iueh" path="res://assets/characters/basic_character_sprites.png" id="2_pwm3d"]
+[ext_resource type="PackedScene" uid="uid://7xd8nkiivw2g" path="res://scenes/components/interactable_component.tscn" id="3_7slbp"]
+[ext_resource type="PackedScene" uid="uid://bp8g6aujstqm0" path="res://scenes/components/interactable_label_component.tscn" id="5_2cygk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t14bj"]
+shader = ExtResource("1_n3vja")
+shader_parameter/original_0 = Color(0.360784, 0.305882, 0.572549, 1)
+shader_parameter/original_1 = Color(0.866667, 0.835294, 0.870588, 1)
+shader_parameter/replace_0 = Color(0.360784, 0.635294, 0.572549, 1)
+shader_parameter/replace_1 = Color(0.72549, 0.937255, 0.788235, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o820h"]
+atlas = ExtResource("2_pwm3d")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad06a"]
+atlas = ExtResource("2_pwm3d")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf7ki"]
+atlas = ExtResource("2_pwm3d")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py72x"]
+atlas = ExtResource("2_pwm3d")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_470bv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o820h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad06a")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf7ki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_py72x")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k56io"]
+radius = 19.0
+
+[node name="Owner" type="CharacterBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_j53br")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_t14bj")
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_470bv")
+animation = &"walking"
+autoplay = "idle"
+frame_progress = 0.981347
+
+[node name="InteractableComponent" parent="." instance=ExtResource("3_7slbp")]
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+shape = SubResource("CircleShape2D_k56io")
+
+[node name="InteractableLabelComponent" parent="." instance=ExtResource("5_2cygk")]
+offset_left = 9.0
+offset_top = -15.0
+offset_right = 27.0
+offset_bottom = 3.0
+scale = Vector2(0.8, 0.8)
+
+[node name="Timer" type="Timer" parent="."]

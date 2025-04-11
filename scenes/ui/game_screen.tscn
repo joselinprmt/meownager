@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://co1nvi0c1hvcq"]
+
+[ext_resource type="Theme" uid="uid://cjqs21wbkhybj" path="res://scenes/ui/game_ui_theme.tres" id="1_lsue0"]
+[ext_resource type="PackedScene" uid="uid://cd84unl2sw6bj" path="res://scenes/ui/tools_panel.tscn" id="2_47x56"]
+[ext_resource type="PackedScene" uid="uid://b4px0susayc50" path="res://scenes/ui/inventory_panel.tscn" id="3_0hw2q"]
+[ext_resource type="PackedScene" uid="uid://cdl0gvlsuiyj4" path="res://scenes/ui/day_night_panel.tscn" id="4_kvxem"]
+[ext_resource type="FontFile" uid="uid://hyayt30c4bch" path="res://assets/ui/fonts/vcr_osd.ttf" id="5_iaiid"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8umn8"]
+font = ExtResource("5_iaiid")
+font_size = 12
+
+[node name="GameScreen" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("1_lsue0")
+
+[node name="ToolsPanel" parent="MarginContainer" instance=ExtResource("2_47x56")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="InventoryPanel" parent="MarginContainer" instance=ExtResource("3_0hw2q")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="DayNightPanel" parent="MarginContainer" instance=ExtResource("4_kvxem")]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "ESC to go back"
+label_settings = SubResource("LabelSettings_8umn8")
