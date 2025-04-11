@@ -15,7 +15,14 @@ Joselin Permata Aprillia (2106705410)
 - Sprout Lands Assets Pack: https://cupnooble.itch.io/sprout-lands-asset-pack
 
 - Sprout Lands UI Pack: https://cupnooble.itch.io/sprout-lands-ui-pack
+  
+- Add-ons Dialogue Manager 2: https://godotengine.org/asset-library/asset/1432
 
 - ZX Palm Font: https://damieng.com/typography/zx-origins/zx-palm/
   
 - VCR OSD Mono Font: https://www.dafont.com/vcr-osd-mono.font
+
+- Cute/cozy music pack: https://1144ghost.itch.io/cutecozy-music-pack
+
+- Sound effects: https://creatorassets.com/a/pop-sound-effects
+  
