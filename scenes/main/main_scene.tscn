@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=4 uid="uid://87eqlw27no3b"]
+[gd_scene load_steps=15 format=4 uid="uid://87eqlw27no3b"]
 
+[ext_resource type="Script" path="res://scenes/main/main_scene.gd" id="1_3hh5y"]
 [ext_resource type="PackedScene" uid="uid://d05h18no6njhb" path="res://scenes/components/day_cycle_component.tscn" id="1_8ilb7"]
 [ext_resource type="TileSet" uid="uid://37yrfvynu62a" path="res://Tilesets/game_tile_set.tres" id="2_3353v"]
 [ext_resource type="PackedScene" uid="uid://r0yuoy6i5ry" path="res://scenes/components/field_cursor_component.tscn" id="3_xehjj"]
@@ -22,6 +23,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(424, 86, 423, 182, 552,
 
 [node name="MainScene" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_3hh5y")
 
 [node name="DayCycleComponent" parent="." instance=ExtResource("1_8ilb7")]
 

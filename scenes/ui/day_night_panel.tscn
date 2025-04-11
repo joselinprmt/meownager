@@ -8,6 +8,7 @@ layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_5h873")
 script = ExtResource("2_i4gvd")
+normal_speed = 30
 
 [node name="DayPanel" type="PanelContainer" parent="."]
 layout_mode = 0

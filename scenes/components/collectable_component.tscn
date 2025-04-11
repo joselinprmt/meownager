@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpj7mg1d18g52"]
+[gd_scene load_steps=3 format=3 uid="uid://cpj7mg1d18g52"]
 
 [ext_resource type="Script" path="res://scenes/components/collectable_component.gd" id="1_djauh"]
+[ext_resource type="AudioStream" uid="uid://7uuky5t8ilos" path="res://assets/audio/pop-3.mp3" id="2_asocy"]
 
 [node name="CollectableComponent" type="Area2D"]
 collision_layer = 32
 collision_mask = 2
 script = ExtResource("1_djauh")
+
+[node name="sfxCollect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_asocy")
+volume_db = 5.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
