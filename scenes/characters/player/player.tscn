@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://l611nply360m"]
+[gd_scene load_steps=57 format=3 uid="uid://l611nply360m"]
 
 [ext_resource type="Script" path="res://scenes/characters/player/player.gd" id="1_vt0he"]
 [ext_resource type="Texture2D" uid="uid://dr5hnkomx1vn8" path="res://assets/characters/character_sprites.png" id="1_wf748"]
@@ -10,6 +10,9 @@
 [ext_resource type="Script" path="res://scenes/characters/player/chopping_state.gd" id="8_bnvow"]
 [ext_resource type="Script" path="res://scenes/characters/player/tilling_state.gd" id="9_p1jg1"]
 [ext_resource type="PackedScene" uid="uid://xncdcva6oe3d" path="res://scenes/components/hit_component.tscn" id="10_0rcu2"]
+[ext_resource type="AudioStream" uid="uid://dv4mp8ql0mvd1" path="res://assets/audio/water-plant.mp3" id="11_yecx8"]
+[ext_resource type="AudioStream" uid="uid://dmnqs0mxmmd07" path="res://assets/audio/hit-plant.mp3" id="12_dnyvf"]
+[ext_resource type="AudioStream" uid="uid://l2oadwki6xm1" path="res://assets/audio/wood-cut.mp3" id="12_iqvt6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pa1lv"]
 atlas = ExtResource("1_wf748")
@@ -455,3 +458,16 @@ debug_color = Color(0.703714, 0.370526, 0.818105, 0.42)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 navigation_layers = 2
+
+[node name="Sfx" type="Node" parent="."]
+
+[node name="WateringSfx" type="AudioStreamPlayer2D" parent="Sfx"]
+stream = ExtResource("11_yecx8")
+volume_db = -8.0
+
+[node name="ChoppingSfx" type="AudioStreamPlayer2D" parent="Sfx"]
+stream = ExtResource("12_iqvt6")
+volume_db = 5.0
+
+[node name="TillingSfx" type="AudioStreamPlayer2D" parent="Sfx"]
+stream = ExtResource("12_dnyvf")
