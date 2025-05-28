@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://87eqlw27no3b"]
+[gd_scene load_steps=16 format=4 uid="uid://87eqlw27no3b"]
 
 [ext_resource type="Script" path="res://scenes/main/main_scene.gd" id="1_3hh5y"]
 [ext_resource type="PackedScene" uid="uid://d05h18no6njhb" path="res://scenes/components/day_cycle_component.tscn" id="1_8ilb7"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://co3wpgrce6i60" path="res://scenes/characters/chicken/chicken.tscn" id="8_c57jl"]
 [ext_resource type="Script" path="res://scripts/spawner/egg_spawner.gd" id="8_vnynl"]
 [ext_resource type="PackedScene" uid="uid://cu2t3u0padesy" path="res://scenes/characters/owner/owner.tscn" id="11_8ar32"]
+[ext_resource type="PackedScene" uid="uid://bpoxd6hs5rr1w" path="res://scenes/ui/pause_menu.tscn" id="13_j06oa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qjbhe"]
 size = Vector2(106, 50)
@@ -107,3 +108,6 @@ position = Vector2(527, 159)
 position = Vector2(244, 228)
 
 [node name="GameScreen" parent="." instance=ExtResource("6_ko8si")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("13_j06oa")]
+process_mode = 3

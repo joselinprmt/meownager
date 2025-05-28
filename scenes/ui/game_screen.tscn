@@ -40,5 +40,5 @@ size_flags_horizontal = 8
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "ESC to go back"
+text = "ESC to pause"
 label_settings = SubResource("LabelSettings_8umn8")

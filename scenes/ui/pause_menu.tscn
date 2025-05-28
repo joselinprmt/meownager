@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpoxd6hs5rr1w"]
+
+[ext_resource type="Script" path="res://scenes/ui/pause_menu.gd" id="1_neyr8"]
+[ext_resource type="Theme" uid="uid://cjqs21wbkhybj" path="res://scenes/ui/game_ui_theme.tres" id="1_tq5l7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5qh6"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_neyr8")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_tq5l7")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_h5qh6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ContinueButton" type="Button" parent="Panel/VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+text = "CONTINUE"
+
+[node name="ExitButton" type="Button" parent="Panel/VBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+text = "BACK
+"
+
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_pressed"]

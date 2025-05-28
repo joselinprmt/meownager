@@ -47,6 +47,10 @@ func add_tilled_soil_cell() -> void:
 	# jarak mouse dengan player tidak lebih dari 400
 	# cell source id bukan -1 jika mouse klik pada area grass
 	if distance < (20 * 20) && cell_source_id != -1:
+		# cek dulu, kalau posisi itu sudah water, tidak usah ubah
+		if terrain_map.get(cell_position, -1) == water:
+			return # sudah water, skip perubahan
+		# kalau bukan water, set jadi tilled soil (soil kering)
 		tilled_soil_tilemap_layer.set_cells_terrain_connect([cell_position], terrain_set, terrain, true)
 		terrain_map[cell_position] = terrain
 
