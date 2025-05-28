@@ -10,6 +10,15 @@ Joselin Permata Aprillia (2106705410)
 
 ![image](https://github.com/user-attachments/assets/c7a2211f-22b5-4e5c-975e-4689f5eab4ee)
 
+# Changelog:
+
+- 2025-04-11: Initial release
+
+- 2025-05-28:
+  - Added sound effects (SFX) for watering, tilling, and chopping
+  - Added pause menu
+  - Added wet soil state after watering
+
 # Assets used
 
 - Sprout Lands Assets Pack: https://cupnooble.itch.io/sprout-lands-asset-pack
@@ -24,5 +33,10 @@ Joselin Permata Aprillia (2106705410)
 
 - Cute/cozy music pack: https://1144ghost.itch.io/cutecozy-music-pack
 
-- Sound effects: https://creatorassets.com/a/pop-sound-effects
-  
+- Take item sfx: https://creatorassets.com/a/pop-sound-effects
+
+- Watering sfx: https://pixabay.com/sound-effects/water-191999/
+
+- Tilling sfx: https://pixabay.com/sound-effects/hit-plant-03-266292/
+
+- Chop tree sfx: https://pixabay.com/sound-effects/woodcutter-84949/
